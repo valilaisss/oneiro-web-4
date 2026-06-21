@@ -1,0 +1,497 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    position: relative; 
+    background-image: url(../assets/images/bg-about.svg);
+    max-width: 100%;
+}
+
+.about-screen-1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    width: 100%;
+    height: 95vh;
+}
+
+.about-diagram {
+    position: relative;
+    width: 98%;
+    height: 90%;
+    color: white;
+}
+
+
+.diagram-label.top-center {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: 1.666vw;
+}
+
+.vertical {
+    position: absolute;
+    left: 50%;
+    width: 0.26vw;
+    background-color: white;
+    transform: translateX(-50%);
+}
+.top-segment {
+    top: 6%;
+    height: 39%;
+}
+.bottom-segment {
+    bottom: 24%;
+    height: 21%;
+}
+
+.horizontal-axis {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    gap: 0;
+}
+
+.dashed-line {
+    width: 30vw;
+    height:  0.26vw;
+    background-image: linear-gradient(to right, rgba(215, 232, 246)50%, rgba(255,255,255,0) 0%);
+    background-position: bottom;
+    background-size: 1.1vw 0.26vw;
+    background-repeat: repeat-x;
+}
+
+.axis-text-left {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 3.33vw;
+    color: #D7E8F6;
+    transform: rotate(-90deg);
+}
+.axis-text-right {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 3.33vw;
+    color: #D7E8F6;
+    transform: rotate(90deg);
+}
+
+.central-text {
+    font-size: 3.33vw;
+    font-style: italic;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.aura-oneiro{
+    position: absolute;
+    width: 25.36vw;
+    height: 14.53vw;
+    top: 35.203%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.diagram-block {
+    position: absolute;
+    font-size: 1.04vw;
+    line-height: 1.4;
+    font-weight: 500;
+    text-align: center;
+}
+
+.top-left {
+    top: 23%;
+    left: 5%;
+    width: 30%;
+}
+.top-right {
+    top: 23%;
+    right: 5%;
+    width: 30%;
+}
+.bottom-center {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    font-size: 1.666vw;
+    line-height: 110%;
+    color: #ffffff;
+}
+
+.connector {
+    position: absolute;
+    top: 50%;
+    height: 0.26vw;
+    background-image: linear-gradient(to right, white 50%, rgba(255,255,255,0) 0%);
+    background-size: 0.7vw 0.26vw;
+    background-repeat: repeat-x;
+}
+.connector.right {
+    left: 150%;
+    width: 22vw;
+}
+.connector.left {
+    right: 150%;
+    width: 21vw;
+}
+
+
+
+
+.desktop-only {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+.tablet-only{
+    display: none;
+}
+.hide-on-mobile{
+    display: block;
+}
+@media (max-width: 780px) {
+    .desktop-only {
+        display: none !important;
+    }
+    .mobile-only {
+        display: none !important;
+    }
+    .tablet-only{
+        display: flex !important;
+    }
+    .hide-on-mobile{
+        display: flex !important;
+    }
+
+    .about-screen-1 {
+        height: 95vh;
+    }
+
+    .diagram-label.top-center {
+        font-size: 3vw;
+        top: 2%;
+    }
+    .axis-text {
+        font-size: 4.5vw;
+    }
+    .central-text {
+        font-size: 7vw;
+    }
+
+    .diagram-block.top-left {
+        width: 40%;
+        left: 0;
+        font-size: 2vw;
+        top: 22%;
+    }
+    .diagram-block.top-right {
+        width: 40%;
+        right: 0;
+        font-size: 2vw;
+        top: 22%;
+    }
+
+    .diagram-block.bottom-center {
+        width: 90%;
+        font-size: 3vw;
+        bottom: 5%;
+    }
+
+    .connector {
+        top: 50%;
+        height: 0.45vw;
+        background-size: 1vw 0.45vw;
+    }
+    .connector.right {
+        left: 88%;
+        width: 15vw;
+    }
+    .connector.left {
+        right: 85%;
+        width: 16vw;
+    }
+
+    .horizontal-axis {
+        gap:0;
+    }
+    .dashed-line {
+        width: 30vw;
+        height:  0.45vw;
+        background-size: 1.1vw 0.45vw;
+        top: 50%;
+    }
+
+    .top-segment {
+        height: 40%;
+    }
+    .bottom-segment {
+        bottom: 24%;
+        height: 24%;
+    }
+    .vertical {
+        width: 0.45vw;
+    }
+    .aura-oneiro{
+        width: 51.1719vw;
+        height: 27.47vw;
+        top: 37.8%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .axis-text-left {
+        font-size: 6.25vw;
+    }
+    .axis-text-right {
+        font-size: 6.25vw;
+    }
+    .about-diagram {
+        height: 98%;
+    }
+    .nav-container {
+        height: 5.5vw;
+    }
+    .nav-link{
+        font-size: 1.6vw;
+    }
+    .nav-container {
+        height: 5.5vw;
+    }
+    .nav-link{
+        font-size: 1.6vw;
+    }
+    .footer-container {
+        height: 4vw;
+    }
+    .footer-link{
+        font-size: 1.3vw;
+    }
+}
+
+
+@media (max-width: 360px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+    .desktop-only {
+        display: none !important;
+    }
+    .mobile-only {
+        display: flex !important;
+    }
+    .tablet-only{
+        display: none !important;
+    }
+
+    .nav-container-mob {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.78125vw 1.0417vw;
+        height: 16.39vw;
+        min-height: 3.125vw;
+        width: 100%;
+        background-image: url(../assets/images/bg-nav.svg);
+        background-size: cover;
+        position: relative;
+    }
+    .nav-links-mob {
+        position: absolute;
+        top: 25%;
+        left: 0;
+        transform: translateY(-25%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        box-sizing: border-box;
+        align-items: center;
+    }
+    .nav-link-mob {
+        color: #797979;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 4.44vw;
+        padding: 0vw 3.8333vw;
+        transition: background-color 0.2s ease;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4167vw;
+    }
+    .about-screen-1 {
+        height: 95vh;
+    }
+    .about-diagram {
+        height: 98%;
+    }
+
+    .tablet-only {
+        display: block !important;
+    }
+
+    .diagram-label.top-center {
+        font-size: 5.5vw;
+        top: 3%;
+    }
+    .vertical {
+        width: 0.6vw;
+    }
+    .top-segment {
+        top: 8%;
+        height: 38%;
+    }
+    .bottom-segment {
+        bottom: auto;
+        top: 55%;
+        height: 8%;
+    }
+
+    .horizontal-axis {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        transform: none;
+    }
+
+    .central-text {
+        position: absolute;
+        top: 48%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 12vw;
+    }
+
+
+    .axis-text-left {
+        position: absolute;
+        bottom: 4%;
+        left: 4%;
+        font-size: 8vw;
+    }
+    .axis-text-right {
+        position: absolute;
+        bottom: 4%;
+        right: 1%;
+        font-size: 8vw;
+    }
+
+    .horizontal-axis .dashed-line:nth-child(2) {
+        position: absolute;
+        top: 93%;
+        left: 15vw;
+        width: 68.5vw;
+        height: 0.6vw;
+        background-size: 2.5vw 0.6vw;
+    }
+    
+    .horizontal-axis .dashed-line:nth-child(4) {
+        display: none;
+    }
+
+    .diagram-block.top-left {
+        width: 44%;
+        left: 2%;
+        top: 20%;
+        font-size: 3.5vw;
+    }
+    .diagram-block.top-right {
+        width: 44%;
+        right: 2%;
+        top: 20%;
+        font-size: 3.5vw;
+    }
+
+    .connector {
+        top: 48%; 
+        height: 0.6vw;
+        background-size: 2vw 0.6vw;
+    }
+    .connector.right {
+        top: 28.7%;
+        left: 95%;
+        width: 6vw;
+    }
+    .connector.left {
+        top: 36%;
+        right: 94%;
+        width: 6vw;
+    }
+
+    .diagram-block.bottom-center {
+        bottom: 12%;
+        width: 90%;
+        font-size: 4.2vw;
+        line-height: 120%;
+    }
+
+    .aura-oneiro {
+        width: 78vw;
+        height: auto;
+        top: 37%;
+    }
+    .footer-container {
+        height: 10vw;
+    }
+    .footer-link {
+        font-size: 2.778vw;
+        padding: 1.6167vw 4.8333vw;
+    }
+    .nav-menu-mob {
+        display: none;
+    }
+    .nav-menu-mob a {
+        color: #797979;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 4.44vw;
+    }
+
+    .nav-container-mob.open {
+        height: auto; 
+        align-items: flex-start;
+        background-image: url(../assets/images/bg-nav-mob.svg);
+        background-position: bottom center; 
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        padding: 0;
+        background-repeat: no-repeat;
+    }
+
+    .nav-container-mob.open .nav-links-mob {
+        position: relative;
+        top: 0;
+        transform: none;
+        height: 14vw;
+    }
+
+    .nav-container-mob.open .nav-menu-mob {
+        display: flex;
+        flex-direction: column;
+        gap: 3.6vw;
+        padding: 5vw 5vw 22vw 5vw;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

@@ -1,0 +1,104 @@
+class PixelSimulation {
+    constructor(containerSelector, customColors) {
+        this.container = document.querySelector(containerSelector);
+        if (!this.container) return;
+
+        this.canvas = document.createElement('canvas');
+        this.ctx = this.canvas.getContext('2d');
+        this.container.appendChild(this.canvas);
+        this.canvas.style.position = 'absolute';
+        this.canvas.style.top = '0';
+        this.canvas.style.left = '0';
+        this.canvas.style.width = '100%';
+        this.canvas.style.height = '100%';
+        this.canvas.style.pointerEvents = 'none';
+        this.canvas.style.zIndex = '3'; 
+        this.particles = [];
+        this.colors = customColors || ['#8A8A8A'];
+        this.settings = {
+            dispersion: 2,
+            friction: 1,
+            particlesPerFrame: 1,
+            pixelSize: 7,
+            lifeDecay: 0.004
+        };
+
+        this.mouse = { x: -1000, y: -1000, isActive: false };
+        this.resize();
+        window.addEventListener('resize', () => this.resize());
+        
+        this.container.addEventListener('mousemove', (e) => {
+            const rect = this.canvas.getBoundingClientRect();
+            this.mouse.x = e.clientX - rect.left;
+            this.mouse.y = e.clientY - rect.top;
+            this.mouse.isActive = true;
+            this.addParticles(this.mouse.x, this.mouse.y);
+        });
+
+        this.container.addEventListener('mouseleave', () => {
+            this.mouse.isActive = false;
+        });
+
+        this.animate();
+    }
+
+    resize() {
+        this.canvas.width = this.container.offsetWidth;
+        this.canvas.height = this.container.offsetHeight;
+    }
+
+    addParticles(x, y) {
+        for (let i = 0; i < this.settings.particlesPerFrame; i++) {
+            const spawnRadius = 20; 
+            const angle = Math.random() * Math.PI * 2;
+            const radius = Math.random() * spawnRadius;
+            const spawnX = x + Math.cos(angle) * radius;
+            const spawnY = y + Math.sin(angle) * radius;
+
+            this.particles.push({
+                x: spawnX, 
+                y: spawnY,
+                size: this.settings.pixelSize,
+                vx: (Math.random() - 0.5) * this.settings.dispersion,
+                vy: (Math.random() - 0.5) * this.settings.dispersion,
+                life: 1,
+                color: this.colors[Math.floor(Math.random() * this.colors.length)]
+            });
+        }
+    }
+
+    animate() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+        for (let i = 0; i < this.particles.length; i++) {
+            let p = this.particles[i];
+            p.vx *= this.settings.friction;
+            p.vy *= this.settings.friction;
+            p.x += p.vx;
+            p.y += p.vy;
+            p.life -= this.settings.lifeDecay; 
+            
+            this.ctx.globalAlpha = 1; 
+
+            this.ctx.fillStyle = p.color;
+            this.ctx.fillRect(p.x, p.y, p.size, p.size); 
+
+            if (p.life <= 0) {
+                this.particles.splice(i, 1);
+                i--;
+            }
+        }
+
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.screen-2')) {
+        new PixelSimulation('.screen-2');
+    }
+    
+    if (document.querySelector('.about-screen-1')) {
+        new PixelSimulation('.about-screen-1', ['#D7E8F6']);
+    }
+});

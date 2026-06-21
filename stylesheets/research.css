@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    position: relative; 
+    min-height: 100vh;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/images/bg-zin-page.svg);
+    background-size: cover;
+    z-index: -10;
+    pointer-events: none;
+    content: "";
+}
+
+.zin-screen-1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4.69vw;
+    overflow-x: clip;
+    width: 100%;
+    height: 95vh;
+}
+.zin-book {
+    width: 47.65vw;
+    height: 47.18vw;
+    position: absolute;
+    left: 3.51%;
+    top: 7.76%;
+}
+.zin-underlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow-x: clip;
+}
+.book-zin-text-1 {
+    position: absolute;
+    left: 53.48%;
+    top: 25.38%;
+    width: 23.28vw;
+    font-size: 1.25vw;
+    font-weight: 500;
+    color: #D7E8F6;
+}
+.book-zin-text-2 {
+    position: absolute;
+    left: 78.45%;
+    top: 49.74%;
+    width: 19.458vw;
+    font-size: 1.25vw;
+    font-weight: 500;
+    color: #D7E8F6;
+}
+.book-zin-text-3 {
+    position: absolute;
+    left: 63.698%;
+    top: 82.389%;
+    width: 23.229vw;
+    font-size: 1.25vw;
+    font-weight: 500;
+    color: #D7E8F6;
+}
+.zin-line-1 {
+    position: absolute;
+    left: 73.229%;
+    top: 15%;
+    width: auto;
+    height: 5vw;
+}
+.zin-line-2 {
+    position: absolute;
+    left: 54%;
+    top: 36%;
+    width: 23.177vw;
+    height: auto;
+}
+.zin-line-3 {
+    position: absolute;
+    left: 80.2083%;
+    top: 62.425%;
+    width: auto;
+    height: 9.895vw;
+}
+.zin-book-header {
+    position: absolute;
+    left: 60.9896%;
+    top: 8.4074%;
+}
+.zin-screen-2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: clip;
+    width: 100%;
+    height: 100vh;
+}
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8vw;
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+.album-stack {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56.82vw;
+    height: 37.55vw;
+    perspective: 1200px;
+}
+.album-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
+    transform: rotate(var(--rot)) translateY(0) scale(1);
+}
+.album-page:nth-child(1)  { --rot: -6deg; z-index: 1; }
+.album-page:nth-child(2)  { --rot:  4deg; z-index: 2; }
+.album-page:nth-child(3)  { --rot: -8deg; z-index: 3; }
+.album-page:nth-child(4)  { --rot:  0deg; z-index: 4; }
+.album-page:nth-child(5)  { --rot: -6deg; z-index: 5; }
+.album-page:nth-child(6)  { --rot:  4deg; z-index: 6; }
+.album-page:nth-child(7)  { --rot: -8deg; z-index: 7; }
+.album-page:nth-child(8)  { --rot:  0deg; z-index: 8; }
+.album-page:nth-child(9)  { --rot: -6deg; z-index: 9; }
+.album-page:nth-child(10) { --rot:  4deg; z-index: 10; }
+.album-page:nth-child(11) { --rot: -8deg; z-index: 11; }
+.album-page:nth-child(12) { --rot:  0deg; z-index: 12; }
+.album-page:nth-child(13) { --rot: -6deg; z-index: 13; }
+.album-page:nth-child(14) { --rot:  4deg; z-index: 14; }
+.album-page:nth-child(15) { --rot:  8deg; z-index: 15; }
+.album-page:nth-child(16) { --rot:  0deg; z-index: 16; }
+.album-page:nth-child(17) { --rot: -6deg; z-index: 17; }
+.album-page:nth-child(18) { --rot:  4deg; z-index: 18; }
+.album-page:nth-child(19) { --rot: -8deg; z-index: 19; }
+.album-page:nth-child(20) { --rot:  0deg; z-index: 20; }
+
+.album-page.removed {
+    opacity: 0;
+    transform: rotate(var(--rot)) translateY(-80px) scale(1.05);
+    pointer-events: none;
+}
+.nav-btn {
+    width: 6.01vw;
+    height: 6.24vw;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+#prevBtn {
+    background-image: url(../assets/images/zin-btn-left.png);
+}
+#nextBtn {
+    background-image: url(../assets/images/zin-btn-right.png);
+}
+.nav-btn:hover {
+    transform: scale(1.15); 
+}
+.nav-btn:active {
+    transform: scale(1.15);
+}
+.nav-btn:disabled {
+    opacity: 1; 
+    cursor: not-allowed;
+    transform: none; 
+}
+
+
+.zin-screen-3 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    display: block;
+    overflow: hidden;
+}
+
+.floating-page {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    width: 8vw; 
+    height: auto;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    opacity: 1; 
+}
+
+.desktop-only {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+.tablet-only{
+    display: none;
+}
+.hide-on-mobile{
+    display: block;
+}
+
+@media (max-width:780px) {
+    .desktop-only {
+        display: none !important;
+    }
+    .mobile-only {
+        display: none !important;
+    }
+    .tablet-only{
+        display: flex !important;
+    }
+    .hide-on-mobile{
+        display: flex !important;
+    }
+
+    .album-stack {
+    width: 76.17vw;
+    height: 50.39vw;
+}
+.book-zin-text-1 {
+    left: 53.48%;
+    top: 29.38%;
+
+}
+.book-zin-text-2 {
+    left: 78.45%;
+    top: 51.74%;
+}
+.book-zin-text-3 {
+    left: 63.698%;
+    top: 79.389%;
+}
+.zin-line-1 {
+    left: 73.229%;
+    top: 20.592%;
+}
+.zin-line-2 {
+    left: 54%;
+    top: 38%;
+}
+.zin-line-3 {
+    left: 80.2083%;
+    top: 62.425%;
+}
+.zin-book-header {
+    left: 60.9896%;
+    top: 13.4074%;
+}
+.nav-container {
+    height: 5.5vw;
+}
+.nav-link{
+    font-size: 1.6vw;
+}
+.footer-container {
+    height: 4vw;
+}
+.footer-link{
+    font-size: 1.3vw;
+}
+.zin-book {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.zin-screen-1 {
+    width: 100%;
+    height: 50vh;
+}
+.zin-screen-2 {
+    width: 100%;
+    height: 50vh;
+}
+.zin-screen-3 {
+    width: 100%;
+    height: 100vh;
+}
+}
+
+@media (max-width:360px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+    .desktop-only {
+        display: none !important;
+    }
+    .mobile-only {
+        display: flex !important;
+    }
+    .tablet-only{
+        display: none !important;
+    }
+
+    .zin-screen-1 {
+        width: 100%;
+        height: 100vh;
+    }
+    .zin-screen-2 {
+        width: 100%;
+        height: 40vh;
+    }
+    .zin-screen-3 {
+        width: 100%;
+        height: 100vh;
+    }
+    .zin-book-header {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 2%;
+    }
+    h2{
+        font-size: 8.89vw;
+        text-align: center;
+    }
+    .zin-book {
+        width: 87.5vw;
+        height: 86.666vw;
+        left: 50%;
+        top: 13%;
+        transform: translateX(-50%);
+    }
+    .book-zin-text-1 {
+        left: 6.11%;
+        top: 61.59%;
+        width: 78.06vw;
+        font-size: 4.44vw;
+        line-height: 125%;
+        letter-spacing: 0.02em;
+    }
+    .book-zin-text-2 {
+        left: 19.72%;
+        top: 73.05%;
+        width: 74.44vw;
+        font-size: 4.44vw;
+        line-height: 125%;
+        letter-spacing: 0.05em;
+    }
+    .book-zin-text-3 {
+        left: 6.11%;
+        top: 91.24%;
+        width: 81.39vw;
+        font-size: 4.44vw;
+        line-height: 125%;
+        letter-spacing: 0.02em;
+    }
+    .zin-line-mob-1 {
+        position: absolute;
+        left: 49.72%;
+        top: 56.20%;
+        width: auto;
+        height: 9.44vw;
+    }
+    .zin-line-mob-2 {
+        position: absolute;
+        left: 3.61%;
+        top: 70.48%;
+        width: 14.166vw;
+        height: 15vw;
+    }
+    .zin-line-mob-3 {
+        position: absolute;
+        left: 49.72%;
+        top: 85.44%;
+        width: auto;
+        height: 9.44vw;
+    }
+    .album-stack {
+        width: 81.39vw;
+        height: 53.89vw;
+    }
+    .footer-container {
+        height: 10vw;
+    }
+    .footer-link {
+        font-size: 2.778vw;
+        padding: 1.6167vw 4.8333vw;
+    }
+}

@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    position: relative; 
+    background-image: url(../assets/images/bg-booking.svg);
+    max-height: 100%;
+}
+
+.booking-screen-1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    width: 100%;
+    height: 95vh;
+    gap: 3.85vw;
+    min-height: 510px;
+}
+
+.desktop-only { display: block; }
+.mobile-only { display: none; }
+.tablet-only { display: none; }
+.hide-on-mobile { display: block; }
+.ultra-mobile-texts { display: none; }
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.07vw;
+    width: 100%;
+    background-image: url(../assets/images/bg-footer.svg);
+    background-size: cover;
+}
+
+.footer-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-cont {
+    width: 43.96vw;
+    height: 45.88vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.left-cont canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.corner-img {
+    position: absolute;
+    z-index: 10;
+    width: 3.8vw; 
+    height: 4vw;
+    pointer-events: none;
+}
+
+.tl { top: 0; left: 0; }
+.tr { top: 0; right: 0; }
+.bl { bottom: 0; left: 0; }
+.br { bottom: 0; right: 0; }
+
+.right-cont {
+    width: 46.93vw;
+    height: 45.88vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-title {
+    font-size: 2.5vw;
+    font-weight: 500;
+    font-style: italic;
+    color: white;
+    letter-spacing: 0.1vw;
+    margin-bottom: 2.5vw;
+}
+
+form { width: 100%; }
+
+.form-row {
+    position: relative;
+    width: 100%;
+    height: 2.66vw;
+    margin-bottom: 1.5vw;
+    border: 0.26vw solid white;
+    border-left: 0;
+    border: 0.26vw solid white;
+    background: transparent; 
+    display: flex;
+    align-items: center;
+}
+
+.edge-svg {
+    position: absolute;
+    top: -0.24vw; 
+    height: calc(100% + 0.47vw);
+    width: 0.8vw;
+}
+
+.edge-svg path, 
+.btn-edge path {
+    stroke-width: 0.26vw;
+    fill: white;
+}
+
+.left-edge { left: -0.8vw; }
+.right-edge { right: -0.8vw; }
+
+.field-label {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.25vw;
+    font-weight: 500;
+    text-transform: lowercase;
+}
+
+.field-divider {
+    width: 0.26vw;
+    height: 100%;
+    background-color: white;
+}
+
+.field-input {
+    width: calc(70% - 2px);
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1.25vw;
+    padding: 0 1.5vw;
+    font-weight: 500;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5vw;
+}
+
+.booking-btn {
+    position: relative; 
+    margin: 2.5vw auto 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13.33vw;
+    height: 3.18vw;
+    background-image: url(../assets/images/btn-booking.svg);
+    background-size: 100% 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 100;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.booking-btn:hover {
+    transform: scale(1.05); 
+}
+
+.booking-btn a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: #828282; 
+    font-size: 1.25vw;
+    font-weight: 500;
+    font-style: italic; 
+}
+
+.submit-btn {
+    position: relative;
+    background: transparent;
+    color: white;
+    font-size: 1.4vw;
+    font-weight: 800;
+    font-style: italic;
+    text-transform: lowercase;
+    padding: 1vw 4vw;
+    border: none;
+    border-top: 0.26vw solid white;
+    border-bottom: 0.26vw solid white;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.submit-btn:hover {
+    opacity: 0.6;
+}
+
+.btn-edge {
+    position: absolute;
+    top: -0.26vw;
+    height: calc(100% + 4px);
+    width: 1vw;
+}
+
+.btn-left { left: -1vw; }
+.btn-right { right: -1vw; }
+
+.coords-panel {
+    position: absolute;
+    width: 7.08vw;
+    height: 5.1vw;
+    bottom: 2vw;
+    left: 2vw;
+    z-index: 15;
+    border: 0.156vw solid white;
+    padding: 0vw;
+}
+
+.coord-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 0.156vw solid white;
+    padding: 0.15vw 0.4vw;
+}
+
+.coord-row:last-child {
+    border-bottom: none;
+}
+
+.coord-label, .coord-value {
+    color: white;
+    font-size: 1.04vw;
+    font-weight: 500;
+}
+
+.coord-value {
+    text-align: right;
+}
+
+
+@media (max-width: 780px) {
+    .desktop-only { display: none !important; }
+    .tablet-only { display: flex !important; }
+    
+    .nav-container { height: 5.5vw; }
+    .nav-link { font-size: 1.6vw; }
+    
+    .footer-container { height: 4vw; }
+    .footer-link { font-size: 1.3vw; }
+    
+    .left-cont { width: 92.45vw; height: 50vw; }
+    .right-cont { width: 100%; height: auto; }
+
+    .corner-img { width: 5vw; }
+    
+    .booking-screen-1 { flex-direction: column; }
+    
+    .form-container { width: 90%; }
+    .form-title { font-size: 5vw; margin-bottom: 4vw; }
+    
+    .form-row {
+        height: 4.69vw;
+        margin-bottom: 4.8vw;
+        border: 0.39vw solid white;
+    }
+    
+    .edge-svg {
+        top: -0.2vw; 
+        width: 1.1vw;
+    }
+    
+    .edge-svg path, 
+    .btn-edge path {
+        stroke-width: 0.39vw;
+    }
+    
+    .left-edge { left: -1.3vw; }
+    .right-edge { right: -1.3vw; }
+    
+    .field-label, .field-input { font-size: 2.34vw; }
+    .field-divider { width: 0.39vw; }
+    
+    .booking-btn {
+        width: 20.18vw;
+        height: 4.82vw;
+    }
+    .booking-btn a { font-size: 2.34vw; }
+    
+    .submit-btn {
+        padding: 2vw 6vw;
+        border-top: 0.39vw solid white;
+        border-bottom: 0.39vw solid white;
+        font-size: 2.8vw;
+    }
+    
+    .btn-edge { top: -0.39vw; }
+    
+    .coords-panel {
+        width: 11.84vw;
+        height: 8.2vw;
+        bottom: 2.5vw;
+        left: 2.5vw;
+        border-width: 0.26vw;
+    }
+    
+    .coord-row { border-bottom-width: 0.26vw; }
+    .coord-label, .coord-value { font-size: 1.82vw; }
+    .corner-img { width: 4.94vw; height: 5.2vw; }
+}
+
+@media (max-width: 360px) {
+    .mobile-only { display: flex !important; }
+    .tablet-only, .hide-on-mobile { display: none !important; }
+    
+    .booking-screen-1 { max-height: 900px; }
+    
+    .form-container {
+        width: 100%;
+        padding: 5vw;
+    }
+    
+    .form-title {
+        font-size: 8vw;
+        margin-bottom: 6vw;
+    }
+    
+    .form-row {
+        height: 14vw;
+        margin-bottom: 5vw;
+        border-width: 0.8vw;
+    }
+    
+    .edge-svg { width: 2.5vw; }
+    .left-edge { left: -2.5vw; }
+    .right-edge { right: -2.5vw; }
+
+    .field-label { width: 35%; font-size: 4.44vw; text-align: center; }
+    .field-input { width: calc(65% - 2px); font-size: 4.44vw; text-align: center; }
+
+    .submit-btn { font-size: 4.44vw; padding: 3vw 8vw; }
+    .btn-edge { width: 3.5vw; }
+    .btn-left { left: -3.5vw; }
+    .btn-right { right: -3.5vw; }
+    
+    .footer-container { height: 10vw; }
+    .footer-link { font-size: 2.778vw; padding: 1.6167vw 4.8333vw; }
+    
+    .left-cont { width: 90.83vw; height: 87.78vw; }
+    
+    .booking-btn { width: 34.44vw; height: 8.06vw; }
+    .booking-btn a { font-size: 4.44vw; }
+
+    .coords-panel {
+        width: 18.61vw;
+        height: 12.77vw;
+        bottom: 4vw;
+        left: 4vw;
+        border-width: 0.5vw;
+    }
+    
+    .coord-row {
+        border-bottom-width: 0.5vw;
+    }
+
+    .coord-label, .coord-value { font-size: 2.77vw; }
+    
+    .corner-img {
+        width: 9vw; 
+        height: auto;
+    }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+    <link rel="stylesheet" href="stylesheets/booking.css"/>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script src="js/nav-mob.js" defer></script>
+    <script src="js/zin.js" defer></script>
+    <script src="js/3d-model.js" defer></script>
+    
+    <title>ONEIRO — Главная</title>
+</head>
+<body>
+    <header>
+        <div class="nav-container hide-on-mobile">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">ONEIRO</a>
+                <a href="about.html" class="nav-link">о нас</a>
+                <a href="research.html" class="nav-link">исследование сна</a>
+                <a href="https://valilaisss.github.io/web-3/" class="nav-link" target="_blank">депривация сна</a>
+                <a href="events.html" class="nav-link">события</a>
+                <a href="booking.html" class="nav-link">запись на прием</a>
+            </div>
+        </div>
+        <div class="nav-container-mob mobile-only">
+            <div class="nav-links-mob">
+                <div class="oneiro-btn"> <a href="index.html" class="nav-link-mob">ONEIRO</a> </div>
+                <div class="lines-btn"> <img src="assets/images/lines-btn.svg " alt="" class="lines-btn-img"></div>
+            </div>
+            <div class="nav-menu-mob">
+                <a href="about.html">о нас</a>
+                <a href="research.html">исследование сна</a>
+                <a href="https://valilaisss.github.io/web-3/"target="_blank">депривация сна</a>
+                <a href="events.html">события</a>
+                <a href="booking.html">запись на прием</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="booking-screen-1">
+        <div class="left-cont" id="model-container">
+            <img src="assets/images/frame-1.svg" alt="" class="corner-img tl">
+            <img src="assets/images/frame-2.svg" alt="" class="corner-img tr">
+            <img src="assets/images/frame-3.svg" alt="" class="corner-img bl">
+            <img src="assets/images/frame-4.svg" alt="" class="corner-img br">
+            
+            <div class="coords-panel">
+                <div class="coord-row">
+                    <span class="coord-label">x</span>
+                    <span class="coord-value" id="coord-x">0.000</span>
+                </div>
+                <div class="coord-row">
+                    <span class="coord-label">y</span>
+                    <span class="coord-value" id="coord-y">0.000</span>
+                </div>
+                <div class="coord-row">
+                    <span class="coord-label">z</span>
+                    <span class="coord-value" id="coord-z">0.000</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-cont">
+            <div class="form-container">
+                <h1 class="form-title">АНКЕТА</h1>
+                <form>
+                    <div class="form-row">
+                        <svg class="edge-svg left-edge" viewBox="0 0 10 100" preserveAspectRatio="none">
+                            <path d="M 10 0 L 10 25 L 0 25 L 0 75 L 10 75 L 10 100" fill="none" stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        </svg>
+                        
+                        <div class="field-label">имя</div>
+                        <div class="field-divider"></div>
+                        <input type="text" class="field-input">
+                        
+                        <svg class="edge-svg right-edge" viewBox="0 0 10 100" preserveAspectRatio="none">
+                            <path d="M 0 0 L 0 25 L 10 25 L 10 75 L 0 75 L 0 100" fill="none" stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        </svg>
+                    </div>
+        
+                    <div class="form-row">
+                        <svg class="edge-svg left-edge" viewBox="0 0 10 100" preserveAspectRatio="none">
+                            <path d="M 10 0 L 10 25 L 0 25 L 0 75 L 10 75 L 10 100" fill="none" stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        </svg>
+                        <div class="field-label">дата рождения</div>
+                        <div class="field-divider"></div>
+                        <input type="text" class="field-input">
+                        <svg class="edge-svg right-edge" viewBox="0 0 10 100" preserveAspectRatio="none">
+                            <path d="M 0 0 L 0 25 L 10 25 L 10 75 L 0 75 L 0 100" fill="none" stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        </svg>
+                    </div>
+        
+                    <div class="form-row">
+                        <svg class="edge-svg left-edge" viewBox="0 0 10 100" preserveAspectRatio="none">
+                            <path d="M 10 0 L 10 25 L 0 25 L 0 75 L 10 75 L 10 100" fill="none" stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        </svg>
+                        <div class="field-label">телефон</div>
+                        <div class="field-divider"></div>
+                        <input type="text" class="field-input">
+                        <svg class="edge-svg right-edge" viewBox="0 0 10 100" preserveAspectRatio="none">
+                            <path d="M 0 0 L 0 25 L 10 25 L 10 75 L 0 75 L 0 100" fill="none" stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        </svg>
+                    </div>
+        
+                    <div class="form-row">
+                        <svg class="edge-svg left-edge" viewBox="0 0 10 100" preserveAspectRatio="none">
+                            <path d="M 10 0 L 10 25 L 0 25 L 0 75 L 10 75 L 10 100" fill="none" stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        </svg>
+                        <div class="field-label">почта</div>
+                        <div class="field-divider"></div>
+                        <input type="text" class="field-input">
+                        <svg class="edge-svg right-edge" viewBox="0 0 10 100" preserveAspectRatio="none">
+                            <path d="M 0 0 L 0 25 L 10 25 L 10 75 L 0 75 L 0 100" fill="none" stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        </svg>
+                    </div>
+        
+                    <div class="form-row">
+                        <svg class="edge-svg left-edge" viewBox="0 0 10 100" preserveAspectRatio="none">
+                            <path d="M 10 0 L 10 25 L 0 25 L 0 75 L 10 75 L 10 100" fill="none" stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        </svg>
+                        <div class="field-label">ваша проблема</div>
+                        <div class="field-divider"></div>
+                        <input type="text" class="field-input">
+                        <svg class="edge-svg right-edge" viewBox="0 0 10 100" preserveAspectRatio="none">
+                            <path d="M 0 0 L 0 25 L 10 25 L 10 75 L 0 75 L 0 100" fill="none" stroke="white" stroke-width="2" vector-effect="non-scaling-stroke" />
+                        </svg>
+                    </div>
+        
+                    <div class="booking-btn">
+                        <a href="404.html" >отправить</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer-container">
+        <div class="footer-links">
+            <p class="footer-link">oneiro@gmail.com</p>
+            <a href="about.html" class="footer-link">ONEIRO</a>
+            <p class="footer-link">+ 7 (929) 990 00 00</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg width="73" height="77" viewBox="0 0 73 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="70" y1="5.5" x2="11" y2="5.5" stroke="white" stroke-width="5" stroke-dasharray="10 10"/>
+<line x1="67.5" y1="66" x2="67.5" y2="7" stroke="white" stroke-width="5" stroke-dasharray="10 10"/>
+<path d="M11 11H0V0H11V11Z" fill="white"/>
+<path d="M11 11H0V0H11V11Z" stroke="white"/>
+<path d="M73 77H62V66H73V77Z" fill="white"/>
+<path d="M73 77H62V66H73V77Z" stroke="white"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg width="77" height="73" viewBox="0 0 77 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line y1="-2.5" x2="59" y2="-2.5" transform="matrix(0 -1 -1 0 3 70)" stroke="white" stroke-width="5" stroke-dasharray="10 10"/>
+<line y1="-2.5" x2="59" y2="-2.5" transform="matrix(-1 0 0 1 66 70)" stroke="white" stroke-width="5" stroke-dasharray="10 10"/>
+<path d="M66 73V62H77V73H66Z" fill="white"/>
+<path d="M66 73V62H77V73H66Z" stroke="white"/>
+<path d="M0 11V0H11V11H0Z" fill="white"/>
+<path d="M0 11V0H11V11H0Z" stroke="white"/>
+</svg>
