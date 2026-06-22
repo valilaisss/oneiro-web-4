@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const folders = document.querySelectorAll('.event-cont');
     const container = document.querySelector('.events-screen-1');
-
-
     const folderLinks = {
-        'event-cont-1': 'event-1.html',
-        'event-cont-2': 'event-2.html',
-        'event-cont-3': 'event-3.html',
-        'event-cont-4': 'event-4.html'
+        'event-cont-1': 'events/event-1.html',
+        'event-cont-2': 'events/event-2.html',
+        'event-cont-3': 'events/event-3.html',
+        'event-cont-4': 'events/event-4.html'
     };
 
     folders.forEach(folder => {
         let isDragging = false;
         let startX, startY, initialLeft, initialTop;
+        
         folder.style.cursor = 'grab';
+        
         const img = folder.querySelector('img');
         if(img) img.addEventListener('dragstart', (e) => e.preventDefault());
 

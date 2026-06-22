@@ -19,6 +19,40 @@ window.addEventListener("load", () => {
     const domTopText = document.getElementById('html-top-text');
 
     if (!screen4) return;
+
+    const currentPath = window.location.pathname;
+    let textures = {
+        center: '../assets/images/banner-main-center.png',
+        left: '../assets/images/banner-main-left.png',
+        right: '../assets/images/banner-main-right.png'
+    };
+ 
+    if (currentPath.includes('event-1.html')) {
+        textures = {
+            center: '../assets/images/banner-main-center-g.png',
+            left: '../assets/images/banner-main-left-g.png',
+            right: '../assets/images/banner-main-right-g.png'
+        };
+    } else if (currentPath.includes('event-2.html')) {
+        textures = {
+            center: '../assets/images/banner-2-center.png',
+            left: '../assets/images/banner-2-left.png',
+            right: '../assets/images/banner-2-right.png'
+        };
+    } else if (currentPath.includes('event-3.html')) {
+        textures = {
+            center: '../assets/images/banner-3-center.png',
+            left: '../assets/images/banner-3-left.png',
+            right: '../assets/images/banner-3-right.png'
+        };
+    } else if (currentPath.includes('event-4.html')) {
+        textures = {
+            center: '../assets/images/banner-4-center.png',
+            left: '../assets/images/banner-4-left.png',
+            right: '../assets/images/banner-4-right.png'
+        };
+    }
+
     const vw = (px) => (px / 1920) * window.innerWidth;
     const Engine = Matter.Engine,
         Render = Matter.Render,
@@ -66,33 +100,19 @@ window.addEventListener("load", () => {
     }
 
     const centerX = baseWidth / 2;
-
     const isTablet = window.innerWidth <= 768; 
 
     let baseBannerW = 387, baseBannerH = 540, baseScale = 0.23;
     let baseSideW = 338, baseSideH = 475, baseSideScale = 0.23;
     let baseSideOffset = 500;
 
-    let baseRope1 = 70;
-    let baseRope2 = 70;
-    let baseRope3 = 90;
-    let baseSideRope = 250;
+    let baseRope1 = 70, baseRope2 = 70, baseRope3 = 90, baseSideRope = 250;
  
     if (isTablet) {
-        baseBannerW = 500;
-        baseBannerH = 700;
-        baseScale = 0.29;
-        
-        baseSideW = 420;
-        baseSideH = 600;
-        baseSideScale = 0.285;
-
+        baseBannerW = 500; baseBannerH = 700; baseScale = 0.29;
+        baseSideW = 420; baseSideH = 600; baseSideScale = 0.285;
         baseSideOffset = 550;
-
-        baseRope1 = 120;     
-        baseRope2 = 480;     
-        baseRope3 = 480;     
-        baseSideRope = 725;
+        baseRope1 = 120; baseRope2 = 480; baseRope3 = 480; baseSideRope = 725;
     }
 
     const bannerW = vw(baseBannerW); 
@@ -127,7 +147,7 @@ window.addEventListener("load", () => {
 
     const bannerBody = Bodies.rectangle(centerX, bannerY + overlapY, bannerW, bannerH, {
         frictionAir: 0.02,
-        render: { sprite: { texture: 'assets/images/banner-main-center.png', xScale: imgScale, yScale: imgScale } }
+        render: { sprite: { texture: textures.center, xScale: imgScale, yScale: imgScale } }
     });
 
     const rope2 = Constraint.create({
@@ -147,9 +167,10 @@ window.addEventListener("load", () => {
     });
 
     const leftAnchor = { x: leftX, y: anchorY + overlapY };
+    
     const leftBannerBody = Bodies.rectangle(leftX, sideBannerY + overlapY, sideBannerW, sideBannerH, {
         frictionAir: 0.02,
-        render: { sprite: { texture: 'assets/images/banner-main-left.png', xScale: sideImgScale, yScale: sideImgScale } }
+        render: { sprite: { texture: textures.left, xScale: sideImgScale, yScale: sideImgScale } }
     });
 
     const leftRope = Constraint.create({
@@ -159,9 +180,10 @@ window.addEventListener("load", () => {
     });
 
     const rightAnchor = { x: rightX, y: anchorY + overlapY };
+    
     const rightBannerBody = Bodies.rectangle(rightX, sideBannerY + overlapY, sideBannerW, sideBannerH, {
         frictionAir: 0.02,
-        render: { sprite: { texture: 'assets/images/banner-main-right.png', xScale: sideImgScale, yScale: sideImgScale } }
+        render: { sprite: { texture: textures.right, xScale: sideImgScale, yScale: sideImgScale } }
     });
 
     const rightRope = Constraint.create({
@@ -225,7 +247,6 @@ window.addEventListener("load", () => {
 
         if (marquee) {
             const newAnchorY = marquee.offsetTop + marquee.offsetHeight;
-            
             const currentIsTablet = window.innerWidth <= 768; 
             const newSideOffset = currentIsTablet ? vw(450) : vw(500);
 

@@ -335,7 +335,7 @@ form { width: 100%; }
     .corner-img { width: 4.94vw; height: 5.2vw; }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 460px) {
     .mobile-only { display: flex !important; }
     .tablet-only, .hide-on-mobile { display: none !important; }
     
